@@ -8,8 +8,8 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 # --- Configuration ---
 # Replace with your actual keys or set them as environment variables
-os.environ["PINECONE_API_KEY"] = "pcsk_aWqwB_RVovAVxBodZPt4PCSMbuNcVp1pbycgsnRbrvFkVWo9x4TKhR8YQYVETJyZRU7Uh"
-os.environ["GOOGLE_API_KEY"] = "AIzaSyBxIQ5qRdEf9S-dLfrebJB7tNw7o7p6eL0"
+os.environ["PINECONE_API_KEY"] = "Key"
+os.environ["GOOGLE_API_KEY"] = "Key"
 
 INDEX_NAME = "research-agent-index"
 # While your LLM is gemini-2.5-flash, we use a specialized model for embeddings
@@ -95,4 +95,5 @@ if __name__ == "__main__":
     if valid_pdfs:
         setup_vector_db(valid_pdfs)
     else:
+
         print("Please add actual PDF files to the test_pdfs list.")
