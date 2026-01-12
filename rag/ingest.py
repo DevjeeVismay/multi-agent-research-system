@@ -5,11 +5,13 @@ from langchain_pinecone import PineconeVectorStore
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
+from dotenv import load_dotenv
 
+load_dotenv()
 # --- Configuration ---
 # Replace with your actual keys or set them as environment variables
-os.environ["PINECONE_API_KEY"] = "Key"
-os.environ["GOOGLE_API_KEY"] = "Key"
+os.environ["PINECONE_API_KEY"] = os.getenv("PINECONE_API_KEY")
+os.environ["GOOGLE_API_KEY"] = os.getenv("GOOGLE_API_KEY")
 
 INDEX_NAME = "research-agent-index"
 # While your LLM is gemini-2.5-flash, we use a specialized model for embeddings
@@ -95,5 +97,4 @@ if __name__ == "__main__":
     if valid_pdfs:
         setup_vector_db(valid_pdfs)
     else:
-
         print("Please add actual PDF files to the test_pdfs list.")
