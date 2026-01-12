@@ -10,7 +10,7 @@ A powerful multi-agent system built with **LangGraph**, **Google Gemini**, and *
     - **Web Search Agent**: Uses Tavily for real-time web information.
     - **RAG Agent**: Queries your internal documents stored in Pinecone using metadata filtering.
 - **Stateful Memory**: Built on LangGraph to maintain context and iterative research steps.
-- **Modern LLM Support**: Powered by Google Gemini (e.g., `gemini-1.5-flash`).
+- **Modern LLM Support**: Powered by Google Gemini (e.g., `gemini-2.5-flash`).
 
 ## 🛠️ Architecture
 
@@ -76,4 +76,5 @@ python multiagent/main.py
 
 ## 🤝 Contributing
 Feel free to fork this project and submit pull requests for any improvements or new features!
+
 
