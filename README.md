@@ -18,15 +18,17 @@ The system follows a supervisor-specialist pattern. The supervisor analyzes the 
 
 ```mermaid
 graph TD
-    START((Start)) --> SUP[Supervisor]
+    START((Start)) --> DS[Document Selector]
+    DS --> SUP[Supervisor]
     SUP --> |Decision| TOOLS[Tool Node]
-    TOOLS --> |Arxiv| AA[Arxiv Agent]
-    TOOLS --> |Web Search| WA[Web Search Agent]
-    TOOLS --> |RAG| RA[RAG Agent]
-    AA --> SUP
-    WA --> SUP
-    RA --> SUP
-    SUP --> |Final Answer| END((End))
+    TOOLS --> |Result| SUP
+    SUP --> |Done| END((End))
+
+    subgraph Specialist Agents
+        TOOLS --> AA[Arxiv Agent]
+        TOOLS --> WA[Web Search Agent]
+        TOOLS --> RA[RAG Agent]
+    end
 ```
 
 ## 🚀 Getting Started
@@ -74,3 +76,4 @@ python multiagent/main.py
 
 ## 🤝 Contributing
 Feel free to fork this project and submit pull requests for any improvements or new features!
+
