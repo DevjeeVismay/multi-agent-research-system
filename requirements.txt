@@ -1,0 +1,10 @@
+langchain-google-genai
+langgraph
+pinecone-client
+arxiv
+tavily-python-client
+pydantic
+python-dotenv
+google-genai
+google-generativeai
+pypdf
